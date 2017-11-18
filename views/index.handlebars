@@ -1,0 +1,73 @@
+  <div class="container">
+
+
+
+    <div class="text-center" id="image">
+          <img src="assets/img/burger.gif" alt="burger_shop" height=360px>
+        </div>
+    <h1 class="display-3">Burger Shop</h1>
+    <p class="info">Enter a burger you want to eat! Click the "Create your Burger" button</p>
+
+
+
+
+
+<div class="row">
+<div class="col-lg-4">
+
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit" class="btn btn-danger">Devour it!</button>
+        </form>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+ 
+
+
+ 
+<div class="current">
+
+<div class="col-lg-4">
+
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <textarea class="form-control" type="text" id="bu" name="burger_name" rows="3"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Create your Burger!</button>
+
+</form>
+</div>
+</div>
+
+<h2 class="eaten-title text-danger">Eaten Burgers</h2>
+<div class="col-lg-4">
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="false">
+          <!--button type="submit">Yum!</button-->
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+</div>
+</div>

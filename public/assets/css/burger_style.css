@@ -1,0 +1,35 @@
+body{
+	background-image: url(https://careersclub.wearethecity.com/wp-content/uploads/2015/02/background.jpg);
+
+}
+
+h1 {
+	text-align: center;
+	color:red;
+	font-size:70px;
+
+}
+
+#image {
+	align-items: center;
+}
+
+p {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+li {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+textarea {
+	margin-top: 120px
+}
+
+button {
+
+	margin-left: 100px;
+}
